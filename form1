@@ -1,0 +1,23 @@
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+artikelName<br>
+<input type="text" class="form-control" name="artikelName"><br>
+
+artikelGruppe<br>
+<?php
+$artikelGruppe=["Kleidung","Heimwerker","Kosmetik","Lebensmittel"];
+
+echo "<select name='artikelGruppe' class='form-control'>\n";
+foreach($artikelGruppe as $element){
+	echo "\t<option>$element</option>\n";
+}
+echo "</select><br>";
+?>
+artikelPreis<br>
+<input type="text" class="form-control" name="artikelPreis"><br>
+artikelBeschreibung<br>
+<textarea class="form-control" name="artikelBeschreibung"></textarea><br>
+artikelStatus<br>
+<input type="checkbox" class="form-control" name="artikelStatus"><br>
+
+<input type="submit" class="form-control" name="senden" value="speichern"><br>
+</form>

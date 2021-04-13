@@ -1,0 +1,4 @@
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+<input type="text" class="form-control" name="suche" placeholder="Suchbegriff">
+<input type="submit" class="form-control" name="suche_senden">
+</form>

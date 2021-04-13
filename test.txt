@@ -1,0 +1,3 @@
+Mo;Schnitzel;7
+Di;Nudeln;5
+Mi;Brei;2

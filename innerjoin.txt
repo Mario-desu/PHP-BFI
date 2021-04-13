@@ -1,0 +1,52 @@
+SELECT artikelName,bestUMSATZ 
+FROM artikel INNER JOIN bestellungen
+ON artikelID=bestARTIKELFID
+
+Artikel mit bestellten Artikeln verknüpfen (Artikel die bestellt wurden)
+
+SELECT artikelName,bestUMSATZ 
+FROM artikel LEFT JOIN bestellungen
+ON artikelID=bestARTIKELFID
+
+(LEFT JOIN zeigt alles aus Artikel, egal ob bestellt oder nicht)
+
+SELECT userName,bestUMSATZ 
+FROM user LEFT JOIN bestellungen
+ON userID=bestUserFID
+WHERE bestUmsatz is NULL
+
+(alle User, die nichts bestellt haben)
+
+(
+SELECT userName,bestUMSATZ 
+FROM user RIGHT JOIN bestellungen
+ON userID=bestUserFID)
+
+(RIGHT JOIN Bestellungen, wo es keinen User gibt, eher selten, für Karteileichen)
+(immer dort wo er hinzeigt ist alles vorhanden)
+
+SELECT artikelName,artikelID,SUM(bestUmsatz) as Summe, 
+SUM(bestStueck) as Anzahl 
+FROM artikel INNER JOIN bestellungen
+ON artikelID=bestARTIKELFID
+GROUP BY artikelID
+ORDER by Anzahl DESC
+//wie oft es verkauft wurde SUM(bestStueck)
+
+SELECT UserName,bestUmsatz
+FROM user INNER JOIN bestellungen
+ON userID=bestUserFID
+
+User mit Bestellungen verknüpfen
+
+
+SELECT userName, bestUmsatz,artikelName
+FROM artikel 
+INNER JOIN bestellungen 
+ON artikelID=bestArtikelFID
+INNER JOIN user
+ON userID=bestUserFID
+
+//"Händchen halten" (inner Join)
+
+ON=Wo werden die 2 Spalten verbunden
